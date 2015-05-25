@@ -32,9 +32,12 @@ var arr = [40,50,60];
 var family = ['Tyler', 'Jordyn', 'Ryan', 'Chelsey', 'Ireland'];
 //Create a function named 'looper' that is given family as it's only argument, loops through the given array, and alerts every item in the array.
 
+
+  looper(family);
+
   var looper = function(someArray){
-    for (x in someArray) {
-      alert(someArray[x]);
+    for(var i = 0; i < someArray.length; i++){
+      alert(someArray[i]);
     }
   }
 
@@ -67,7 +70,8 @@ var nums = [1,2,3,6,22,98,45,23,22,12];
   var evenFinder = function(nums){
     for (var i = 0; i < nums.length; i++){
       if (nums[i] % 2 !== 0){
-        nums.splice(i,1);
+        nums.splice(i,1)
+        i--;
       }
     }
     return nums;
@@ -134,6 +138,7 @@ var numbers = [0,3,4,5,6,7,9,14,17,24,25,26,29,30];
 var str = 'this is my sentence';
 //Write a function called reverse that takes is given str as it's only argument and returns that string after it's been reversed
 
+  //one option
   var reverse = function(str){
     var arr = [];
     for (var i = str.length - 1; i >= 0; i--){
@@ -144,6 +149,19 @@ var str = 'this is my sentence';
   }
 
   reverse(str);
+
+  //another option
+  var reverse = function(str){
+    var to_array = str.split('');
+    var arr_reverse = to_array.reverse();
+    var str_reverse = arr_reverse.join('');
+    return str_reverse;
+  }
+
+  //best option
+  var reverse = function(str){
+    return str.split('').reverse().join('');
+  }
 
 
 //Next Problem
